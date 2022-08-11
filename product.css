@@ -69,6 +69,13 @@
 }
 
 
+.form-control:focus {
+  /* From Bootswatch Flatly theme */
+  border-color: #969fa8;
+  box-shadow: 0 0 0 0.25rem rgb(44 62 80 / 25%);
+}
+
+
 .rot-image {
   -webkit-animation:spin 4s linear infinite;
   -moz-animation:spin 4s linear infinite;
