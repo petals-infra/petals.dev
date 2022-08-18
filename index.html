@@ -41,8 +41,14 @@
         Public swarm will be launched in <span class="d-inline-block">November 2022.</span><br>
         We can email you when it happens.
       </p>
-      <form class="d-flex mb-4 col-xl-8 mx-auto">
-        <input class="form-control me-2" type="text" placeholder="Leave your email" style="font-size: 11pt;">
+      <form
+        class="d-flex mb-4 col-xl-8 mx-auto"
+        action="https://buttondown.email/api/emails/embed-subscribe/petals"
+        method="post"
+        target="popupwindow"
+        onsubmit="window.open('https://buttondown.email/petals', 'popupwindow')"
+      >
+        <input class="form-control me-2" type="email" name="email" placeholder="Leave your email" style="font-size: 11pt;">
         <button class="btn btn-outline-dark my-0" style="font-size: 11pt; white-space: nowrap;" type="submit">Let me know</button>
       </form>
       <p class="lead fw-normal pt-3" style="font-size: 12pt;">
