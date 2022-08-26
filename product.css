@@ -105,13 +105,25 @@
 }
 
 .feature-list li {
+  position: relative;
   font-size: 11.5pt;
   margin: 0;
   padding-left: 50px;
-	list-style: none;
-	background-image: url("logo.svg");
-	background-repeat: no-repeat;
-	background-position: left center;
-	background-size: 30px;
+  list-style: none;
   text-align: left;
+}
+
+.feature-list li:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  filter: hue-rotate(240deg);
+  background-image: url("logo.svg");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 30px;
 }
