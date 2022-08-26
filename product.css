@@ -93,3 +93,25 @@
       transform:rotate(360deg);
   }
 }
+
+.feature-list {
+  padding-left: 0;
+}
+
+@media (min-width: 769px) {
+  .feature-list {
+    padding-left: 2rem;
+  }
+}
+
+.feature-list li {
+  font-size: 11.5pt;
+  margin: 0;
+  padding-left: 50px;
+	list-style: none;
+	background-image: url("logo.svg");
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 30px;
+  text-align: left;
+}
