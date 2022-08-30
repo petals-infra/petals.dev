@@ -133,9 +133,8 @@ main p {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  filter: hue-rotate(240deg);
-  background-image: url("logo.svg");
+  background-image: url("leaf.svg");
   background-repeat: no-repeat;
   background-position: left center;
-  background-size: 30px;
+  background-size: 35px;
 }
