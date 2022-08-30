@@ -94,6 +94,18 @@
   }
 }
 
+.lead {
+  font-size: 13pt;
+}
+
+main p {
+  font-size: 12pt;
+}
+
+.acknowledgements {
+  font-size: 10pt;
+}
+
 .feature-list {
   padding-left: 0;
 }
