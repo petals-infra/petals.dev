@@ -130,7 +130,7 @@ main p {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 35px;
   height: 100%;
   box-sizing: border-box;
   background-image: url("leaf.svg");
