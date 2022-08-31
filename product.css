@@ -110,12 +110,6 @@ main p {
   padding-left: 0;
 }
 
-@media (min-width: 769px) {
-  .feature-list {
-    padding-left: 2rem;
-  }
-}
-
 .feature-list li {
   position: relative;
   font-size: 10.5pt;
