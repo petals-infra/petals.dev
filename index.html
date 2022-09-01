@@ -31,7 +31,7 @@
         <span class="d-inline-block">for running</span>
         100B+ language models
       </p>
-      <ul class="feature-list pt-3">
+      <ul class="feature-list pt-3 subscription-offer">
         <li class="mb-3">
           Run inference or fine-tune <a target="_blank" href="https://huggingface.co/bigscience/bloom">BLOOM-176B</a>
           by joining compute resources with people all over the Internet.
@@ -46,22 +46,37 @@
           something you can't do in proprietary APIs.
         </li>
       </ul>
+
+      <div class="subscription-success" style="display: none;">
+        <h2 class="fw-bold pt-4">
+          You're on the waitlist!
+        </h2>
+        <p class="fw-normal pt-1">
+          We will email you when the public swarm is ready.
+        </p>
+      </div>
+
       <a target="_blank" class="btn btn-dark mt-2 mb-4" href="#">Read paper</a>
       <a target="_blank" class="btn btn-outline-dark mx-4 mt-2 mb-4" href="https://github.com/bigscience-workshop/petals">View code</a>
-      <p class="fw-normal pt-3">
-        Public swarm will be launched in <span class="d-inline-block">November 2022.</span><br>
-        We can email you when it happens.
-      </p>
-      <form
-        class="d-flex mb-4 col-xl-8 mx-auto"
-        action="https://buttondown.email/api/emails/embed-subscribe/petals"
-        method="post"
-        target="popupwindow"
-        onsubmit="window.open('https://buttondown.email/petals', 'popupwindow')"
-      >
-        <input class="form-control me-2" type="email" name="email" placeholder="Leave your email" style="font-size: 11pt;">
-        <button class="btn btn-outline-dark my-0" style="font-size: 11pt; white-space: nowrap;" type="submit">Let me know</button>
-      </form>
+
+      <div class="subscription-offer mb-4">
+        <p class="fw-normal pt-3">
+          Public swarm will be launched in <span class="d-inline-block">November 2022.</span><br>
+          We can email you when it happens.
+        </p>
+        <form class="d-flex col-xl-8 mx-auto">
+          <input class="form-control me-2" type="email" name="email" id="email" placeholder="Leave your email" style="font-size: 11pt;">
+          <button class="btn btn-outline-dark my-0" style="font-size: 11pt; white-space: nowrap;" type="submit">Let me know</button>
+        </form>
+        <div class="loading-feedback mt-2" style="display: none; font-size: 10pt;">
+          Submitting...
+        </div>
+        <div class="invalid-feedback mt-2" style="font-size: 10pt;"></div>
+        <div class="valid-feedback mt-2" style="font-size: 10pt;">
+          We sent you an email to confirm your address. Click it and you're in!
+        </div>
+      </div>
+
       <p class="fw-normal pt-4">
         In the meantime, you can <a target="_blank" href="https://github.com/bigscience-workshop/petals">launch</a> and use
         your own private swarm.
@@ -77,7 +92,42 @@
     </div>
   </div>
 </main>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
     <script src="./assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      $(() => {
+        $(window).on("hashchange", () => {
+          if (window.location.hash == "#success") {
+            $(".subscription-offer").hide();
+            $(".subscription-success").show();
+          }
+        });
+        $(window).trigger("hashchange");
+
+        $(".subscription-offer form").submit(event => {
+          event.preventDefault();
+          $(".subscription-offer .form-control").removeClass("is-valid is-invalid");
+          $(".invalid-feedback, .valid-feedback").hide();
+          $(".loading-feedback").show();
+
+          $.post('https://buttondown.email/api/emails/embed-subscribe/petals', $('.subscription-offer form').serialize())
+            .done(() => {
+              $(".loading-feedback").hide();
+              $(".subscription-offer .form-control").addClass("is-valid");
+              $(".valid-feedback").show();
+            })
+            .fail((request, status, message) => {
+              $(".loading-feedback").hide();
+              $(".subscription-offer .form-control").addClass("is-invalid");
+              if (message === "") {
+                $(".invalid-feedback").text("Oops, something has failed. Please check your Internet connection");
+              } else {
+                $(".invalid-feedback").text("Oops, something has failed (" + message + ")");
+              }
+              $(".invalid-feedback").show();
+            });
+        });
+      });
+    </script>
   </body>
 </html>
