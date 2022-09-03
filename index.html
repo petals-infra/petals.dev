@@ -33,17 +33,25 @@
       </p>
       <ul class="feature-list pt-3 subscription-offer">
         <li class="mb-3">
-          Run inference or fine-tune <a target="_blank" href="https://huggingface.co/bigscience/bloom">BLOOM-176B</a>
+          Run inference or fine-tune large language models like <a target="_blank" href="https://huggingface.co/bigscience/bloom">BLOOM-176B</a>
           by joining compute resources with people all over the Internet.
-          <span class="d-inline-block">No need to have high-end GPUs.</span>
+          No need to have high-end GPUs.
         </li>
         <li class="mb-3">
-          One inference step takes &thickapprox; 1 sec &mdash; much faster than possible with offloading.
+          It's difficult to fit the whole BLOOM-176B into GPU memory
+          <a target="_blank" href="https://twitter.com/Tim_Dettmers/status/1559892918395031552">unless</a>
+          you have multiple high-end GPUs.
+          Instead, <b>Petals</b> allows to load and serve a small part of the model, then team up with people serving all the other parts
+          to run inference or fine-tuning.
+        </li>
+        <li class="mb-3">
+          This way, one inference step takes &thickapprox; 1 sec &mdash; much faster than possible with offloading.
           Enough for chatbots and other interactive apps.
         </li>
         <li class="mb-3">
-          Employ any fine-tuning and sampling methods by accessing model's hidden states and changing its control flow &mdash;
-          something you can't do in proprietary APIs.
+          Beyond traditional language model APIs &mdash;
+          you can employ any fine-tuning and sampling methods by executing custom paths through the model or accessing its hidden states.
+          This allows for the comforts of an API with the flexibility of PyTorch.
         </li>
       </ul>
 
