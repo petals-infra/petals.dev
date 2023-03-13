@@ -46,13 +46,14 @@
           to run inference or fine-tuning.
         </li>
         <li class="mb-3">
-          Inference runs at &thickapprox; 1 sec per step (token) &mdash; 10x faster than possible with offloading, enough for
+          Single-batch inference runs at &thickapprox; 1 sec per step (token) &mdash;
+          <a href="https://github.com/bigscience-workshop/petals#benchmarks">up to 10x faster</a> than offloading, enough for
           <a target="_blank" href="http://chat.petals.ml">chatbots</a> and other interactive apps.
           Parallel inference reaches hundreds of tokens/sec.
         </li>
         <li class="mb-3">
           Beyond classic language model APIs &mdash;
-          you can employ any fine-tuning and sampling methods by executing custom paths through the model or accessing its hidden states.
+          you can employ any fine-tuning and sampling methods, execute custom paths through the model, or see its hidden states.
           You get the comforts of an API with the flexibility of PyTorch.
         </li>
       </ul>
