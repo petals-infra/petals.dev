@@ -23,7 +23,7 @@
         }
       }
     </style>
-    <link href="product.css" rel="stylesheet">
+    <link href="product.css?v=2" rel="stylesheet">
   </head>
   <body>
 
@@ -73,8 +73,23 @@
         <a target="_blank" class="btn btn-outline-dark ms-4 mt-2 mb-4" href="https://github.com/bigscience-workshop/petals">Docs on GitHub</a>
       </div>
 
+      <p class="fw-normal pt-3" style="font-size: 11pt;">
+          <b>Top contributors</b> right now:
+      </p>
+      <p class="fw-normal top-contributors" style="font-size: 11pt;">
+        <span class="gray">Loading...</span>
+      </p>
+      <p class="fw-normal pb-3" style="font-size: 9.5pt;">
+        <b>Want to contribute?</b>
+        <span class="gray">
+          Check out <a target="_blank" href="https://health.petals.dev">available</a> models and
+          <a target="_blank" href="https://github.com/bigscience-workshop/petals#connect-your-gpu-and-increase-petals-capacity">help hosting</a>
+          one of them!
+        </span>
+      </p>
+
       <div class="subscription-offer mb-4">
-        <p class="fw-normal pt-3">
+        <p class="fw-normal pt-3" style="font-size: 11pt;">
           Join our <a target="_blank" href="https://discord.gg/D9MwApKgWa">Discord</a>
           or subscribe via email<br>
           to follow Petals development:
@@ -148,6 +163,14 @@
               $(".invalid-feedback").show();
             });
         });
+
+        $.get("https://health.petals.dev/")
+          .done(data => {
+            $(".top-contributors").html($(data).find(".top-contributors").html());
+          })
+          .fail((request, status, message) => {
+            $(".top-contributors").text("Failed to load top contributors");
+          });
       });
     </script>
   </body>

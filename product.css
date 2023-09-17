@@ -132,3 +132,12 @@ main p {
   background-position: left center;
   background-size: 35px;
 }
+
+.top-contributors .bull {
+  color: #888;
+  margin: 0 2px;
+}
+
+.gray {
+  color: #888;
+}
