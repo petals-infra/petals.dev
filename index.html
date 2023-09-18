@@ -23,7 +23,7 @@
         }
       }
     </style>
-    <link href="product.css?v=2" rel="stylesheet">
+    <link href="product.css?v=3" rel="stylesheet">
   </head>
   <body>
 
@@ -76,27 +76,22 @@
       <p class="fw-normal pt-3" style="font-size: 11pt;">
           <b>Top contributors</b> right now:
       </p>
-      <p class="fw-normal top-contributors" style="font-size: 10.5pt;">
+      <div class="fw-normal top-contributors" style="font-size: 10.5pt;">
         <span class="gray">Loading...</span>
-      </p>
-      <p class="fw-normal pb-3" style="font-size: 9.5pt;">
-        <b>Want to contribute?</b>
-        <span class="gray">
-          Check out <a target="_blank" href="https://health.petals.dev">available</a> models and
-          <a target="_blank" href="https://github.com/bigscience-workshop/petals#connect-your-gpu-and-increase-petals-capacity">help hosting</a>
-          one of them!
-        </span>
-      </p>
+      </div>
+      <div class="mt-2">
+        <a target="_blank" class="btn btn-outline-dark mt-2 mb-4" href="https://github.com/bigscience-workshop/petals#connect-your-gpu-and-increase-petals-capacity">
+          Contribute my GPU
+        </a>
+      </div>
 
       <div class="subscription-offer mb-4">
         <p class="fw-normal pt-3" style="font-size: 10.5pt;">
-          Join our <a target="_blank" href="https://discord.gg/D9MwApKgWa">Discord</a>
-          or subscribe via email<br>
-          to follow Petals development:
+          Follow development in <a target="_blank" href="https://discord.gg/D9MwApKgWa">Discord</a> or via email:
         </p>
         <form class="d-flex col-xl-8 mx-auto">
           <input class="form-control me-2" type="email" name="email" id="email" placeholder="Leave your email" style="font-size: 11pt;">
-          <button class="btn btn-outline-dark my-0" style="font-size: 11pt; white-space: nowrap;" type="submit">Subscribe</button>
+          <button class="btn btn-outline-dark my-0" type="submit">Subscribe</button>
         </form>
         <div class="email-promise mt-2" style="color: #999; font-size: 9.5pt;">
           We send updates once a few months. No spam.

@@ -133,6 +133,11 @@ main p {
   background-size: 35px;
 }
 
+.btn {
+  font-size: 11pt;
+  white-space: nowrap;
+}
+
 .top-contributors .bull {
   color: #888;
   margin: 0 2px;
