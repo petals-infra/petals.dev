@@ -138,6 +138,10 @@ main p {
   white-space: nowrap;
 }
 
+.top-contributors .entry {
+  white-space: nowrap;
+}
+
 .top-contributors .bull {
   color: #888;
   margin: 0 2px;
